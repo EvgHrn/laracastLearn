@@ -1,38 +1,13 @@
 <?php
 
-require 'functions.php';
+require 'Task.php';
+require 'database/Connection.php';
+require 'database/QueryBuilder.php';
 
-class Task {
+$pdo = Connection::make();
 
-    protected $description;
+$query = new QueryBuilder($pdo);
 
-    protected $completed = false;
-
-    public function __construct($description) {
-        $this->description = $description;
-    }
-
-    public function isComplete() {
-        return $this->completed;
-    }
-
-    public function complete() {
-        $this->completed =  true;
-    }
-
-    public function getDescription() {
-        return $this->description;
-    }
-}
-
-$tasks = [
-    new Task('Go to the store'),
-    new Task('Finish my screencast'),
-    new Task('Clean my room')
-];
-
-$tasks[0]->complete();
-
-new PDO('mysql:host=127.0.0.1;dbname=mytodo', 'root', '');
+$tasks = $query->selectAll('todos');
 
 require 'index.view.php';
