@@ -7,6 +7,15 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <nav>
+      <ul>
+        <li><a href="/about">About us</a></li>
+        <li><a href="/contact">Contact us</a></li>
+      </ul>
+    </nav>
+    <h1>
+      My tasks
+    </h1>
     <?php foreach($tasks as $task) : ?>
 
       <li>
