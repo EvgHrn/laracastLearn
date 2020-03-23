@@ -2,4 +2,4 @@
 
 $tasks = $db->selectAll('todos');
 
-require 'view/index.view.php';
+require 'views/index.view.php';
