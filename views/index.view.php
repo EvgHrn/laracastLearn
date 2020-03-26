@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>title</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="/about">About us</a></li>
-        <li><a href="/contact">Contact us</a></li>
-      </ul>
-    </nav>
+<?php require('partials/head.php'); ?>
+
     <h1>
       My tasks
     </h1>
@@ -27,5 +14,5 @@
       </li>
 
     <?php endforeach; ?>
-  </body>
-</html>
+
+<?php require('partials/footer.php'); ?>    
