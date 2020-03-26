@@ -8,7 +8,7 @@
   </head>
   <body>
     <h1>
-        About Culture
+        About Culture at <?= $name; ?>
     </h1>
   </body>
 </html>
