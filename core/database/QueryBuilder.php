@@ -12,4 +12,17 @@ class QueryBuilder {
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
+
+    public function insert($table, $params) {
+        $keys = implode(', ', array_keys($params));
+        $values = ':'.implode(', :', array_keys($params));
+        $sql = "insert into $table ($keys) values ($values)";
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute($params);
+        } catch (Exception $e) {
+            var_dump('Woops, something gone wrong');
+        }
+        
+    }
 }
